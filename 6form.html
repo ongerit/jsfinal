@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Professor Sam Sultan - New York University</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/o.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#home"><img src="images/SCPS_logo.gif"/></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+      <div class="row" id="main">
+
+        <div class="col-md-3">
+          <div class="list-group">
+            <h4>
+             <script language="JavaScript" type="text/javascript">
+                var monthNames = new Array(
+                    "January","February","March","April","May","June","July",
+                    "August","September","October","November","December");
+                var now = new Date();
+                      document.write(monthNames[now.getMonth()] + " " + 
+                      now.getDate() + ", " + now.getFullYear());
+              </script>
+          </h4>
+            <a href="#" class="list-group-item active">NYU</a>
+            <a href="#" class="list-group-item">NYU HOME</a>
+            <a href="#" class="list-group-item">NYU SCPS</a>
+            <a href="#" class="list-group-item">NYU Faculty Portal</a>
+            <a href="#" class="list-group-item">NYU Online Courses</a>
+            <a href="#" class="list-group-item">Course Listing</a>
+            <a href="#" class="list-group-item">Graducate Courses</a>
+            <a href="#" class="list-group-item">Undergraduate Courses</a>
+            <a href="#" class="list-group-item">Certificate Courses</a>
+            <a href="#" class="list-group-item">Continuing Education</a>
+            <a href="#" class="list-group-item">Student Evaluation</a>
+            <a href="#" class="list-group-item">Student Feedback</a>
+            <a href="#" class="list-group-item"> Contact</a>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+
+<html>
+
+<head>
+<title>FORM FIELDS</title>
+<style>
+    .input {background:"#f1f1f1"; color:"#000000"; font-family:helvetica}
+    .show  {visibility:visible; color:red; font:weight:bold; vertical-align:top}
+    .show2 {font-weight:normal; color:white; background-color:brown; width:551px} 
+    .hide  {visibility:hidden } 
+    .hide2 {background-color:tan }
+</style>
+</head>
+
+<body bgcolor=lightyellow>
+
+<h1>All types of form entry validation</h1> 
+<h3>( Swapping style class names )<BR>
+
+<form name=form1 method=POST action=/cgi-bin/sultans/formProc>
+
+<fieldset style="width:550;border-color:red">
+<legend align="left">Enter your Order</legend>
+
+<table>
+<tr>
+<td><b>Enter Fullname...<td><input type=text name=fullname size=40 class=input>
+                            <span id=f1 class=hide>*</span>
+<tr>
+<td><b>Enter Address... <td><textarea name=address rows=5 cols=42 class=input></textarea>
+                            <span id=f2 class=hide>*</span>
+<tr>
+<td><b>Enter Sex...     <td><input type=radio name=sex value='M'>Male 
+                            <input type=radio name=sex value='F'>Female 
+                            <span id=f3 class=hide>*</span>
+<tr>
+<td><b>Enter Status...  <td><input type=checkbox name=status value='S'>Single
+                            <input type=checkbox name=status value='M'>Married
+                            <input type=checkbox name=status value='C'>With Children                       
+                            <span id=f4 class=hide>*</span>
+<tr>
+<td><b>Enter Hobbies... <td><select name=hobby size=3 multiple class=input>
+                                 <option value='read'>Reading</option> 
+                                 <option value='tv'>Television and Movies</option>
+                                 <option value='art'>Art and Theater</option>  
+                                 <option value='sport'>Playing Sports</option> 
+                                 <option value='travel'>Traveling</option> 
+                                 <option value='shop'>Shopping</option>
+                                 <option value='sleep'>Relaxing and Sleeping</option>
+                            </select>
+                            <span id=f5 class=hide>*</span>
+
+<tr height=20>
+<tr>
+<td><input type=submit value='       Go        ' onClick=" return validate()">
+<td><input type=reset  value='Clear'>  
+</table>
+<br>
+</fieldset>
+
+<div id=f6 class="hide hide2"> &nbsp; Please correct error fields above</div>
+</form>
+
+
+<script>
+
+//-- JavaScript code to validate the form entry fields -----------------------------
+
+function validate() {
+
+    errorMsg = "";
+
+    document.getElementById("f1").className = "hide";
+    document.getElementById("f2").className = "hide";
+    document.getElementById("f3").className = "hide";
+    document.getElementById("f4").className = "hide";
+    document.getElementById("f5").className = "hide";
+    document.getElementById("f6").className = "hide hide2";   //notice 2 classes
+
+    if (document.form1.fullname.value == '') {               
+        document.getElementById("f1").className = "show";
+        errorMsg = "yes";
+    }
+
+    if (document.form1.address.value == '') {                           
+        document.getElementById("f2").className = "show";
+        errorMsg = "yes";
+    }
+
+    if (document.form1.sex[0].checked == false &&            
+        document.form1.sex[1].checked == false    ) {  
+        document.getElementById("f3").className = "show";
+        errorMsg = "yes";
+    }
+
+    if (document.form1.status[0].checked == false &&         
+        document.form1.status[1].checked == false &&
+        document.form1.status[2].checked == false    ) {
+        document.getElementById("f4").className = "show";
+        errorMsg = "yes";
+    }
+
+    enteredHobbies = '';                                        
+    for (i = 0; i < document.form1.hobby.options.length; i++)
+    {
+        if (document.form1.hobby.options[i].selected == true)
+            enteredHobbies += document.form1.hobby.options[i].value + " ";
+    }
+    if (enteredHobbies == '') { 
+        document.getElementById("f5").className = "show";
+        errorMsg = "yes";
+    }
+
+    if (errorMsg != '') {                                   
+        document.getElementById("f6").className = "show show2";   //notice 2 classes
+  return(false);
+    }
+
+    submit = confirm('Please confirm your order.....');   
+    if (submit == false)          
+  return(false);            
+
+    return(true);
+}
+
+</script>
+
+</body>
+</html>
+
+          
+        </div>
+
+      </div>
+
+    </div><!-- /.container -->
+
+    <div class="container">
+
+      <hr>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              <script>
+  var cookiec = document.cookie
+  if (cookiec != "") {
+    var eqchr = 0;
+    for (var cloop = 1; cloop <= cookiec.length; cloop++) {
+      if (cookiec.charAt(cloop) == "=") {
+        eqchr=(++cloop);
+      }
+    }
+    var cookiess = 0;
+    clength=cookiec.length;
+    cookies="";
+    for (cloop = eqchr; cloop < clength; cloop++) {
+      if (cookiec==";") {
+        cloop=clength;
+      }
+      else {
+        cookies = cookies + cookiec.charAt(cloop);      
+      }
+    }
+    cookiess = parseInt(cookies);
+    document.write("[" + cookiess + "]");
+    cookiess++;
+    cookies = cookiess;
+    var one_week = 7 * 24 * 60 * 60 * 1000;
+    var expDate = new Date();
+    expDate.setTime(expDate.getTime() + one_week);
+    document.cookie = "Counter=" + escape(cookies) + "; expires=" + expDate.toGMTString();
+  } 
+  else {
+    var one_week = 7 * 24 * 60 * 60 * 1000;
+    var expDate = new Date();
+    expDate.setTime(expDate.getTime() + one_week);
+    document.cookie = "Counter=2; expires=" + expDate.toGMTString();
+    document.write("[1]");
+  }
+  </script>
+            </p>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/sam.js"></script>
+
+
+  </body>
+</html>

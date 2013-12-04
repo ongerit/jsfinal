@@ -1,0 +1,44 @@
+body {
+	background-color: #f4f4f4;
+}
+
+.thumbnail img {
+	float: left;
+	padding: 10px;}
+
+.ratings {
+  color: #d17581;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}
+
+footer {
+  margin: 50px 0;
+}
+
+a.list-group-item.active, a.list-group-item.active:hover{
+	background-color: rgb(73, 47, 146);
+}
+
+.navbar {
+	border-bottom: solid #ccc 2px;
+	background-color: #fff;
+}
+
+.container{
+	background-color: #fff;
+}
+
+a.list-group-item:hover{
+ background-color: rgb(160, 132, 235);
+ color: #fff;
+}
