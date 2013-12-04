@@ -88,7 +88,7 @@
               <p>&nbsp;</p>
               </div>
 
-            <a href="/6form.html" class="list-group-item">Student Evaluation</a>
+            <a href="6form.html" class="list-group-item">Student Evaluation</a>
             <a href="http://oit.scps.nyu.edu/~sultans/other/feedback.html" class="list-group-item">Student Feedback</a>
             <a href="mailto:sam.saltan@nyu.edu" class="list-group-item"> Contact</a>
           </div>
@@ -111,46 +111,35 @@
 
 <body bgcolor=lightyellow>
 
-<h1>All types of form entry validation</h1> 
-<h3>( Swapping style class names )<BR>
+<h1>Student Evaluation Form</h1> 
 
 <form name=form1 method=POST action=/cgi-bin/sultans/formProc>
 
 <fieldset style="width:550;border-color:red">
-<legend align="left">Enter your Order</legend>
-
 <table>
 <tr>
 <td><b>Enter Fullname...<td><input type=text name=fullname size=40 class=input>
                             <span id=f1 class=hide>*</span>
 <tr>
-<td><b>Enter Address... <td><textarea name=address rows=5 cols=42 class=input></textarea>
-                            <span id=f2 class=hide>*</span>
-<tr>
-<td><b>Enter Sex...     <td><input type=radio name=sex value='M'>Male 
-                            <input type=radio name=sex value='F'>Female 
+<td><b>Did you enjoy the Javascript Course  <td><input type=radio name=like value='Y'>Yes 
+                            <input type=radio name=like value='N'>No 
                             <span id=f3 class=hide>*</span>
 <tr>
-<td><b>Enter Status...  <td><input type=checkbox name=status value='S'>Single
-                            <input type=checkbox name=status value='M'>Married
-                            <input type=checkbox name=status value='C'>With Children                       
+<td><b>Whould you recommend this class to a friend<td><input type=checkbox name=status value='S'>Yes
+                            <input type=checkbox name=status value='M'>No
+                            <input type=checkbox name=status value='C'>Maybe                      
                             <span id=f4 class=hide>*</span>
 <tr>
-<td><b>Enter Hobbies... <td><select name=hobby size=3 multiple class=input>
-                                 <option value='read'>Reading</option> 
-                                 <option value='tv'>Television and Movies</option>
-                                 <option value='art'>Art and Theater</option>  
-                                 <option value='sport'>Playing Sports</option> 
-                                 <option value='travel'>Traveling</option> 
-                                 <option value='shop'>Shopping</option>
-                                 <option value='sleep'>Relaxing and Sleeping</option>
-                            </select>
+<tr>
+<td><b>What would you add to the class <td><textarea name=change rows=5 cols=42 class=input></textarea>
+                            <span id=f2 class=hide>*</span>
+<tr>
                             <span id=f5 class=hide>*</span>
 
 <tr height=20>
 <tr>
-<td><input type=submit value='       Go        ' onClick=" return validate()">
-<td><input type=reset  value='Clear'>  
+<td><input type=submit value='       Send       ' onClick=" return validate()">
+<td><input type=reset  value='Start Over'>  
 </table>
 <br>
 </fieldset>
@@ -179,13 +168,13 @@ function validate() {
         errorMsg = "yes";
     }
 
-    if (document.form1.address.value == '') {                           
+    if (document.form1.change.value == '') {                           
         document.getElementById("f2").className = "show";
         errorMsg = "yes";
     }
 
-    if (document.form1.sex[0].checked == false &&            
-        document.form1.sex[1].checked == false    ) {  
+    if (document.form1.like[0].checked == false &&            
+        document.form1.like[1].checked == false    ) {  
         document.getElementById("f3").className = "show";
         errorMsg = "yes";
     }
