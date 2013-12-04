@@ -42,3 +42,16 @@ a.list-group-item:hover{
  background-color: rgb(160, 132, 235);
  color: #fff;
 }
+
+.col-sm-4.col-lg-4.col-md-4 img{
+	height: 175px;
+	width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
+	color: rgb(73, 47, 146);
+}
+
+#gra, #und, #cer, #con {
+	display:none;
+	padding: 6px;
+}
